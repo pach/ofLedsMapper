@@ -7,6 +7,6 @@ leds mapper made for a custom wall leds based on 25 modules (5*5), each one made
 arduino files based on fast leds and receiving artnet threw ethernet shield
 
 each module is a artnet universe, incrementing by 1 (IP and universe)
-you can have x per y module, starting from top/left/bottom/right, warping in snake or not
-each module has x and y sub-modules (any starting direction, warping)
-each sub-modules has x and y RGB leds (any starting direction, warping)
+you can have x per y module, starting from top/left/bottom/right, wrapping in snake or not
+each module has x and y sub-modules (any starting direction, wrapping)
+each sub-modules has x and y RGB leds (any starting direction, wrapping)
