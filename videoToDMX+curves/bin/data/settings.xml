@@ -1,0 +1,19 @@
+<module>
+	<nb_module_X>5</nb_module_X>
+	<nb_module_Y>5</nb_module_Y>
+	<start_corner>2</start_corner>
+	<snake_at_end>1</snake_at_end>
+	<nb_submodule_X>8</nb_submodule_X>
+	<nb_submodule_Y>4</nb_submodule_Y>
+	<submodule_start_corner>2</submodule_start_corner>
+	<submodule_snake_at_end>1</submodule_snake_at_end>
+	<nb_pixel_X>2</nb_pixel_X>
+	<nb_pixel_Y>2</nb_pixel_Y>
+	<pixel_start_corner>0</pixel_start_corner>
+	<pixel_snake_at_end>1</pixel_snake_at_end>
+	<reset>0</reset>
+<module/>
+<pixel_start_corner_on_pair_line>3</pixel_start_corner_on_pair_line>
+	<pixel_start_corner_on_impair_line>0</pixel_start_corner_on_impair_line>
+<artnet_process_time>0.04</artnet_process_time>
+</module>
