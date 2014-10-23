@@ -10,3 +10,5 @@ each module is a artnet universe, incrementing by 1 (IP and universe)
 you can have x per y module, starting from top/left/bottom/right, wrapping in snake or not
 each module has x and y sub-modules (any starting direction, wrapping)
 each sub-modules has x and y RGB leds (any starting direction, wrapping)
+
+artnet nodes start at 10.0.0.1 then 10.0.0.2, etc

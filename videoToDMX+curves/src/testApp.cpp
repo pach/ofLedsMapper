@@ -35,10 +35,6 @@ void testApp::setup(){
     
     gui.add(isActive.set("active", true));
     
-    gui.add(port_light.set("port light", 12345, 111111, 15000));
-    gui.add(addr_light.set("addr light", "11.0.0.45"));
-    gui.add(update_light.set("update light connection", false));
-    
     syphon.setup();
     syphon.setApplicationName("VDMX5");
     syphon.setServerName("ledWall");
@@ -56,9 +52,6 @@ void testApp::setup(){
     load_lut_bool = true;
     
     isActive = true;
-    
-    oscSend.setup(addr_light, port_light);
-    oscUpdate = false;
     
     ofSetFrameRate(60);
     
@@ -201,45 +194,6 @@ void testApp::update(){
                 oscUpdate = true;
             }
             oldtime = ofGetElapsedTimef();
-        }
-        
-        if (oscUpdate){
-            int count = 0;
-            ofVec3f medium = ofVec3f(0., 0., 0.);
-            
-            itMods = modules.begin();
-            itModsEnd = modules.end();
-            while(itMods != itModsEnd){
-                medium += itMods->getMediumColor();
-                itMods++;
-                count ++;
-            }
-
-            medium /= count;
-            
-            ofxOscMessage m;
-            m.setAddress("/leds/r");
-            m.addFloatArg(medium.x/255.);
-            oscSend.sendMessage(m);
-            m.clear();
-            
-            m.setAddress("/leds/g");
-            m.addFloatArg(medium.y/255.);
-            oscSend.sendMessage(m);
-            m.clear();
-            
-            m.setAddress("/leds/b");
-            m.addFloatArg(medium.z/255.);
-            oscSend.sendMessage(m);
-            m.clear();
-            
-            m.setAddress("/mur/luminance");
-            m.addFloatArg((medium.x+medium.y+medium.z)/(3*255.));
-            oscSend.sendMessage(m);
-            m.clear();
-
-    //        ofLog (OF_LOG_NOTICE, "osc updated "+ofToString(medium.x)+", "+ofToString(medium.y)+", "+ofToString(medium.z));
-            oscUpdate = false;
         }
     }
     else{
